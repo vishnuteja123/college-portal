@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Statistics</title>
+    <link rel="icon" href="../images/sreyas_logo.png">
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <style>
+        .hackathon, .coding_competition {
+            display: inline-block;
+            height: 200px;
+            width: 400px;
+        }
+        .btn {
+            padding: 20px;
+            padding-bottom: 40px;
+            font-size: large;
+            border-radius: 0;
+            border-style: none;
+            border-style: double;
+            font-family: fantasy;
+        }
+        .btn:hover {
+            background-color: azure;
+        }
+    </style>
+
+</head>
+<body class = "index_body">
+    <div class = "nav">
+        <a href = "index.html">Home</a>
+        <a href = "statistics.html">Statistics</a>
+        <a href = "../html/about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="register.html" id = "register"><img src="../images/icons/signup_icon.png" alt="login_icon" width = 20px>SignUp</a>        
+    </div><br><br><br>
+
+    <div class="hackathon">
+        <form action="../php/hackathon_statistics.php">
+            <input class = "btn" type="submit" value = "Get Hackathon Stats">
+        </form>
+    </div>
+
+    <div class="coding_competition">
+        <form action="../php/cc_statistics.php">
+            <input class = "btn" type="submit" value = "Get Coding Stats">
+        </form>
+    </div>
+
+    <div>
+        <img src="../images/bar-graphs.jpg" alt="">
+    </div>
+</body>
+</html>

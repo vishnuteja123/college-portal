@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="icon" href="../images/sreyas_logo.png">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body id = "login_body">
+    <a href = "https://sreyas.ac.in/"><img src="../images/sreyas_logo.png" width = 150px alt="sreyas_logo"></a>
+    <div class="login">
+        <form method = "post" action="../php/login.php">
+            <span class = "labels">College-Id</span>
+            <input required name = "college_id" type = "text"><br><br>
+
+            <span class = "labels">Password</span>
+            <input name = "password" type = "password"><br><br>
+            
+            <input class = "sign_in_btn" type="submit" value="SignIn">
+        </form><br>
+        <span id = "text">New Student? Register<a href = "register.html"> here</a></span>
+    </div>
+</body>
+</html>

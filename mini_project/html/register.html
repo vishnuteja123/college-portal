@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="icon" href="../images/sreyas_logo.png">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body id = "login_body">
+    <a href = "https://sreyas.ac.in/"><img src="../images/sreyas_logo.png" width = 150px alt="sreyas_logo"></a>
+    <div class="login">
+        <form method = "post"  action = "../php/register.php">
+            <span class = "labels">Name<span class = "required">*</span></span>
+            <input required name = "name" type = "text"><br><br>
+
+            <span class = "labels">College-Id<span class = "required">*</span></span>
+            <input id = "college_id" required name = "college_id" type = "text"><br><br>
+
+            <span class = "labels">Password<span class = "required">*</span></span>
+            <!-- <span id = "break">(Password must have atleast 8 characters<br>with a capital, small and special character)</span> -->
+            <input placeholder="Contains 8 characters, capital, small & special char" id = "first_password" required name = "password" type = "password"><br><br>
+
+            <span class = "labels repeat_password">Re-EnterPassword<span class = "required">*</span></span>
+            <input id = "second_password" required name = "confirm_password" type ="password"><br><br>
+            
+            <input class = "sign_in_btn" type="submit" value="Register" onclick = "return validate()">
+        </form><br>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+</html>

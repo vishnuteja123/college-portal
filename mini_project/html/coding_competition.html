@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coding Contest</title>
+    <link rel="icon" href="../images/sreyas_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: #E8F6EF;
+        }
+        .hack_link {
+            text-align: center;
+        }
+        .form {
+            width: 500px;
+            border-style: groove;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+        .h2 {
+            color: brown;
+            font-family: 'DM Serif Display', serif;
+            font-size: xx-large;
+        }
+        .label {
+            font-size: larger;
+            display: block;
+            padding: 10px;
+        }
+        .red {
+            color: red;
+        }
+        .submit {
+            height: 40px;
+            width: 130px;
+            border-style: none;
+            background-color: aquamarine;
+            font-weight: bold;
+        }
+        .college_logo {
+            text-align: center;
+        }
+        input {
+            height: 25px;
+            width: 200px;
+            border-style: none;
+            background-color: rgb(226, 226, 226);
+            border-radius: 8px;
+            margin-bottom: 3px;
+        }
+    </style>
+
+    <script>
+        function validate() {
+            /*id validation*/
+            var id = document.getElementById("college_id");
+            var id_value = id.value;
+            var n = id_value.length;
+            var regex1 = "VE1A0", regex2 = "VE5A0";
+            var temp = id_value.slice(2, 7);
+
+
+            /*year validation*/
+            var year = document.getElementById("year");
+            var year_val = year.value;
+
+            /*section validation*/
+            var section = document.getElementById("section");
+            var section_val = section.value;
+
+            /*password validation*/
+            var password = document.getElementById("password");
+            var password_val = password.value;
+
+            /*Validation*/
+            if(n != 10) { 
+                alert("college id must have 10 characters");
+                return false;
+            }
+            if(temp != regex1 && temp != regex2) { 
+                alert("enter valid college id");
+                return false;
+            }
+            if(year_val > '4' || year_val < '1') { 
+                alert("enter valid year");
+                return false;
+            }
+            if(section_val != 'A' && section_val != 'B' && section_val != 'C' && section_val != 'D') { 
+                alert("enter valid section");
+                return false;
+            }
+            n = password_val.length;
+            if(n < 8) {
+                alert("password must be atleast 8 characters");
+                return false;
+            }
+            var cap = false, small = false, special_char = false, num = false;
+            for(var i = 0; i < n; ++i) {
+                var ch = password_val.charAt(i);
+                if(ch >= 'A' && ch <= 'Z') cap = true;
+                if(ch >= 'a' && ch <= 'z') small = true;
+                if(ch === '_' || ch === '@' || ch === '$' || ch === '^' || ch === '.' ) special_char = true;
+                if(ch >= '0' && ch <= '9') num = true;
+            }
+            if(cap === false || small === false || special_char === false || num === false) {
+                    alert("enter valid password");
+                    return false;
+            }
+
+            return true;
+
+        }
+    </script>
+
+</head>
+<body>
+    
+    <div class = "hack_link">
+        <a href = "https://sreyas.ac.in/"><img src="../images/sreyas_logo.png" width = 150px alt="sreyas_logo"></a>
+        <h2 class = "h2">Register Yourself In Coding Contest</h2>
+        <img src="../images/coding_contest.jpg" alt="" height = "500px">
+    </div>
+
+    <div class = "form">
+        <form action="../php/coding_competition.php" method = "post">
+            <span class = "label">Name<span class = "red">*</span></span>
+            <input required type="text" name = "name">
+            <span class = "label">College-Id<span class = "red">*</span></span>
+            <input id = "college_id" required type="text" name = "college_id">
+            <span class = "label">Year<span class = "red">*</span></span>
+            <input id = "year" required type="text" name = "year">
+            <span class = "label">Section<span class = "red">*</span>(CapsOnly)</span>
+            <input id = "section" required type="text" name = "section">
+            <span class = "label">Branch<span class = "red">*</span></span>
+            <input required type="text" name = "branch">
+            <span class = "label">Password<span class = "red">*</span></span>
+            <input id = "password" required type="password" name = "password"><br><br>
+            <input class = "submit" type="submit" name = "submit" value="Register" onclick = "return validate()">
+        </form>
+    </div>
+</body>
+</html>
